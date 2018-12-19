@@ -1,0 +1,63 @@
+package newPantene;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class pantene {
+
+
+
+	public static void main(String[] args) throws InterruptedException, AWTException
+	{
+		System.setProperty("webdriver.firefox.marionette", "Resource/geckodriver.exe");
+		WebDriver drive;
+		FirefoxDriver driver = new 	FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get("https://pantene.com/en-us");
+		System.out.println("Url pass");
+		Thread.sleep(3000);
+		driver.findElementByXPath(".//*[@id='phdesktopheader_0_phdesktopheadermiddle_1_txtSearchBox']").sendKeys("Shampoo");
+		Thread.sleep(3000);
+		System.out.println("insert text pass ");
+		driver.findElementByXPath(".//*[@id='phdesktopheader_0_phdesktopheadermiddle_1_imgSearch']").click();
+		Thread.sleep(3000);
+		System.out.println("click on search box");
+		
+		
+		driver.findElementByXPath(".//*[@id='phdesktopbody_0_phdesktopproductresults_1_RptrProductList_lblProductName_3']").click();
+		Thread.sleep(3000);
+		System.out.println("Repairing Hair Mask pass");
+		driver.findElementByXPath(".//*[@id='phdesktopbody_0_phdesktopproductprimarycontentarea_0_lnkWriteReview']").click();
+		Thread.sleep(3000);
+		System.out.println("click on review");
+		//WebElement driver;
+//		Actions actions = new Actions(driver);
+//		WebElement star=driver.findElement(By.xpath("//img[@id='phdesktopbody_0_imgRatingStars' or (@style='width: 100%')] "));
+//		actions.moveToElement(star).build().perform();
+	Robot robot=new Robot();
+//	Robot r = new Robot();
+	robot.mouseMove(487,669);
+	robot.keyPress(KeyEvent.VK_ENTER);
+//robot.keyPress(keycode);
+	Thread.sleep(3000);
+		
+	
+        driver.findElementByXPath(".//*[@id='phdesktopbody_0_rptProductReview_rblControlForProductReview_0_0_0']").click();
+        
+        
+        driver.findElementByXPath(".//*[@id='phdesktopbody_0_rptProductReview_txtControlForProductReview_1']");
+		
+		
+		//driver.quit();
+	}
+
+
+
+}
